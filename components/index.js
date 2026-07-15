@@ -10,7 +10,7 @@ class CleoNavbar extends HTMLElement {
       <nav class="fixed w-full top-0 z-50 p-6">
         <div class="max-w-6xl mx-auto glass-panel rounded-full px-8 py-4 flex justify-between items-center">
           <a href="#" class="block">
-            <img src="../img/Cleo-logo.svg" alt="Cleo Logo" class="h-[57px] w-auto">
+            <img src="./img/Cleo-logo.svg" alt="Cleo Logo" class="h-[57px] w-auto">
           </a>
           <div class="flex items-center gap-8">
             <a href="#works" class="text-sm font-medium hover:text-earth-sage transition-colors">Works</a>
