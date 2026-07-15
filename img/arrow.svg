@@ -1,0 +1,21 @@
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="arrow-icon" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .arrow-icon path {
+      transition: transform 0.3s ease;
+      transform-origin: center;
+    }
+
+    .arrow-icon:hover .shaft {
+      transform: translate(-2px, -2px) scale(0.9);
+      transform-origin: bottom right;
+    }
+
+    .arrow-icon:hover .head {
+      transform: translate(-2px, -2px);
+    }
+  </style>
+
+  <path class="shaft" d="M7 7 L17 17"></path>
+  <path class="head" d="M17 7v10H7"></path>
+  <path class="head" d="M17 17 L10 17"></path>
+</svg>
