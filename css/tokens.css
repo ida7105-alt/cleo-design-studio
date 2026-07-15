@@ -1,0 +1,35 @@
+/* tokens.css */
+:root {
+  /* Colors */
+  --color-earth-bg: #FAF9F6;
+  --color-earth-bg-alt: #eff1e6;
+  --color-earth-dark: #2A2522;
+  --color-earth-muted: #58504a;
+  --color-earth-sage: #8A9A86;
+  --color-earth-sand: #b5aca0;
+
+  /* Font Sizes */
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.25rem;
+  --text-2xl: 1.5rem;
+  --text-3xl: 1.875rem;
+  --text-4xl: 2.25rem;
+  --text-5xl: 3rem;
+  --text-6xl: 3.75rem;
+  --text-7xl: 4.5rem;
+
+  /* Spacing */
+  --spacing-px: 1.5rem; /* px-6 */
+  --spacing-section-y: 60px;
+  --spacing-section-y-md: 115px;
+
+  /* Layout */
+  --layout-max-w: 72rem; /* max-w-6xl */
+
+  /* Shadows */
+  --shadow-glass: 0 8px 32px 0 rgba(42, 37, 34, 0.04);
+  --shadow-hover: 0 20px 40px -15px rgba(42, 37, 34, 0.1);
+}

@@ -1,0 +1,209 @@
+/* components.css */
+@import './tokens.css';
+
+/* Layout Components */
+.layout-container {
+  max-width: var(--layout-max-w);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--spacing-px);
+  padding-right: var(--spacing-px);
+}
+
+.section-padding {
+  padding-top: var(--spacing-section-y);
+  padding-bottom: var(--spacing-section-y);
+  padding-left: var(--spacing-px);
+  padding-right: var(--spacing-px);
+}
+
+@media (min-width: 768px) {
+  .section-padding {
+    padding-top: var(--spacing-section-y-md);
+    padding-bottom: var(--spacing-section-y-md);
+  }
+}
+
+/* Typography Components */
+.text-title {
+  font-size: var(--text-3xl);
+  font-weight: 300;
+  color: var(--color-earth-dark);
+  line-height: 1.2;
+}
+
+@media (min-width: 768px) {
+  .text-title {
+    font-size: var(--text-5xl);
+  }
+}
+
+@media (min-width: 1024px) {
+  .text-title {
+    font-size: var(--text-6xl);
+  }
+}
+
+.text-label {
+  display: block;
+  color: var(--color-earth-sage);
+  font-size: var(--text-sm);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.text-body {
+  color: var(--color-earth-muted);
+  font-size: var(--text-lg);
+  font-weight: 300;
+  line-height: 1.625; /* relaxed */
+}
+
+/* Glassmorphism Panel Component */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.45);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  box-shadow: var(--shadow-glass);
+}
+
+/* Card Components */
+.card-glass {
+  border-radius: 2rem;
+  padding: 4.2vw;
+  aspect-ratio: 1 / 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+  transition: border-color 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+  background: rgba(255, 255, 255, 0.45);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  box-shadow: var(--shadow-glass);
+  text-decoration: none;
+  color: inherit;
+}
+
+@media (min-width: 768px) {
+  .card-glass {
+    padding: 1.5rem; /* p-6 */
+  }
+}
+
+.card-glass:hover {
+  border-color: rgba(138, 154, 134, 0.3); /* earth-sage 30% */
+}
+
+.card-interactive {
+  border-radius: 2rem;
+  padding: 2rem; /* p-8 */
+  height: 100%;
+  cursor: pointer;
+  transition: transform 0.3s cubic-bezier(0.23, 1, 0.32, 1), background-color 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  background: rgba(255, 255, 255, 0.45);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  box-shadow: var(--shadow-glass);
+}
+
+.card-interactive:hover {
+  transform: scale(1.03) translateY(-8px);
+  background-color: rgba(255, 255, 255, 0.6);
+  box-shadow: var(--shadow-hover);
+}
+
+.card-sage {
+  background-color: rgba(138, 154, 134, 0.8); /* earth-sage/80 */
+  border-radius: 2rem;
+  padding: 2.5rem; /* p-10 */
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  color: #ffffff;
+}
+
+@media (min-width: 768px) {
+  .card-sage {
+    padding: 3rem; /* p-12 */
+  }
+}
+
+.card-sage:hover {
+  transform: scale(1.01);
+  box-shadow: 0 20px 40px -15px rgba(138, 154, 134, 0.3);
+}
+
+/* Button Components */
+.custom-btn {
+  min-width: 10.51em;
+  width: auto;
+  padding: 0 2em;
+  height: 3em;
+  border-radius: 30em;
+  font-size: var(--text-base);
+  font-family: inherit;
+  border: none;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  box-shadow: 6px 6px 12px #c5c5c5, -6px -6px 12px #ffffff;
+  background: var(--color-earth-bg);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: var(--color-earth-dark);
+  transition: color 0.5s ease;
+  font-weight: 500;
+}
+
+.custom-btn::before {
+  content: '';
+  width: 0;
+  height: 3em;
+  border-radius: 30em;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-image: linear-gradient(to right, #0fd850 0%, #f9f047 100%);
+  transition: .5s ease;
+  display: block;
+  z-index: -1;
+}
+
+.custom-btn:hover::before {
+  width: 100%;
+}
+
+.custom-btn:hover {
+  color: #000;
+}
+
+.glass-btn {
+  background: rgba(42, 37, 34, 0.85);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: #F5F3EF;
+  transition: all 0.3s ease;
+}
+
+.glass-btn:hover {
+  background: rgba(42, 37, 34, 1);
+  transform: translateY(-2px);
+}
+
+/* Web Component host elements — layout transparent */
+cleo-work-step,
+cleo-banner-thumb,
+cleo-project-card,
+cleo-impact-card {
+  display: contents;
+}

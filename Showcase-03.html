@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="zh-TW" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- SEO: Meta Title & Description -->
+    <title>咖啡品牌 VI 視覺識別系統設計 | Blue Harbor | Cleo Chang Portfolio</title>
+    <meta name="description" content="以 Monday Blue 為靈感的咖啡品牌 Blue Harbor。以深藍、白與螢光粉紅為配色方案，打造兼具幽默感與潮流感的包裝、提袋與店頭視覺語言。">
+    <meta name="robots" content="index, follow">
+
+    <!-- SEO: Canonical URL -->
+    <link rel="canonical" href="https://cleo-design.studio/Showcase-03.html">
+
+    <!-- SEO: Open Graph -->
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="咖啡品牌 VI 視覺識別系統設計 | Blue Harbor | Cleo Chang">
+    <meta property="og:description" content="以 Monday Blue 為靈感的咖啡品牌，深藍與螢光粉的視覺碰撞，打造具潮流感的包裝與店頭視覺識別。">
+    <meta property="og:url" content="https://cleo-design.studio/Showcase-03.html">
+    <meta property="og:image" content="https://cleo-design.studio/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:site_name" content="Cleo Chang Portfolio">
+    <meta property="og:locale" content="zh_TW">
+
+    <!-- SEO: Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="咖啡品牌 VI 視覺識別系統設計 | Blue Harbor">
+    <meta name="twitter:description" content="以 Monday Blue 為靈感，深藍與螢光粉的視覺碰撞，打造具潮流感的咖啡品牌包裝與店頭視覺識別。">
+    <meta name="twitter:image" content="https://cleo-design.studio/og-image.png">
+
+    <link rel="icon" type="image/x-icon" href="../img/fav.ico">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Noto+Sans+TC:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'Noto Sans TC', 'sans-serif'],
+                    },
+                    colors: {
+                        earth: {
+                            bg: '#eff1e6',
+                            dark: '#2A2522',
+                            muted: '#58504a',
+                            sage: '#8A9A86',
+                            sand: '#b5aca0'
+                        }
+                    },
+                    boxShadow: {
+                        'glass': '0 8px 32px 0 rgba(42, 37, 34, 0.04)',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #eff1e6;
+            color: #2A2522;
+            overflow-x: hidden;
+        }
+
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.45);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            box-shadow: 0 8px 32px 0 rgba(42, 37, 34, 0.04);
+        }
+
+        .fade-up {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1), transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .fade-up.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .delay-100 {
+            transition-delay: 100ms;
+        }
+
+        .delay-200 {
+            transition-delay: 200ms;
+        }
+
+        .delay-300 {
+            transition-delay: 300ms;
+        }
+
+        /* 影片容器：讓影片維持原始比例並置中 */
+        .video-wrapper {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #1a1714;
+        }
+
+        .video-wrapper video {
+            max-width: 100%;
+            height: auto;
+            max-height: 90vh;
+            display: block;
+        }
+    </style>
+</head>
+
+<body class="antialiased selection:bg-earth-sage selection:text-white relative">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full top-0 z-50 p-6">
+        <div class="max-w-6xl mx-auto glass-panel rounded-full px-8 py-4 flex justify-between items-center">
+            <a href="index.html" target="_top" class="block transition-transform hover:scale-105">
+                <img src="../img/Cleo-logo.svg" alt="Cleo Logo" class="h-[57px] w-auto">
+            </a>
+            <div class="flex items-center gap-6">
+                <a href="index.html?contact=open"
+                    class="text-sm font-medium hover:text-earth-sage transition-colors text-earth-muted">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="relative z-10 pt-48">
+
+        <!-- Project Hero -->
+        <section class="px-6 mb-14 md:mb-[90px]">
+            <div class="max-w-6xl mx-auto w-full">
+                <div class="fade-up">
+                    <span class="block text-earth-sage text-sm tracking-[0.2em] uppercase mb-6">Brand Identity &
+                        Packaging Design</span>
+                    <h1 class="text-3xl md:text-5xl font-light text-earth-dark">Blue Harbor</h1>
+                    <p class="mt-6 text-earth-muted text-lg md:text-xl font-light leading-relaxed mb-10">咖啡品牌 VI 視覺系統
+                    </p>
+                </div>
+
+                <div
+                    class="grid grid-cols-1 md:grid-cols-4 gap-8 border-t border-earth-dark/10 pt-10 fade-up delay-100">
+                    <div>
+                        <h4 class="text-sm font-medium tracking-widest text-earth-sage uppercase mb-2">Brand</h4>
+                        <p class="text-earth-muted text-sm font-light leading-relaxed">Blue Harbor</p>
+                    </div>
+                    <div>
+                        <h4 class="text-sm font-medium tracking-widest text-earth-sage uppercase mb-2">Services</h4>
+                        <p class="text-earth-muted text-sm font-light leading-relaxed">Brand Identity<br>Packaging
+                            Design<br>Visual System</p>
+                    </div>
+                    <div>
+                        <h4 class="text-sm font-medium tracking-widest text-earth-sage uppercase mb-2">Role</h4>
+                        <p class="text-earth-muted text-sm font-light leading-relaxed">Visual Designer</p>
+                    </div>
+                    <div>
+                        <h4 class="text-sm font-medium tracking-widest text-earth-sage uppercase mb-2">Year</h4>
+                        <p class="text-earth-muted text-sm font-light leading-relaxed">2026</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Main Video -->
+        <section class="mb-14 md:mb-24 fade-up">
+            <div class="video-wrapper">
+                <div class="relative max-w-full">
+                    <video id="project-video" autoplay muted loop playsinline>
+                        <source src="../img/showcase-03.mp4" type="video/mp4">
+                    </video>
+                    <!-- Sound Toggle Button -->
+                    <button id="sound-toggle" aria-label="Toggle Sound"
+                        class="absolute bottom-6 right-6 z-20 flex items-center justify-center w-12 h-12 rounded-full bg-black/50 hover:bg-black/75 border border-white/10 text-white shadow-lg transition-all duration-300 hover:scale-105 active:scale-95 focus:outline-none">
+                        <svg id="sound-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                            stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                            <!-- Muted icon by default -->
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M17.25 9.75L19.5 12m0 0l2.25 2.25M19.5 12l2.25-2.25M19.5 12l-2.25 2.25m-10.5-6L4.5 9H1.5v6h3l4.5 3.75V5.25z" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Content Block: Project Overview -->
+        <section class="max-w-6xl mx-auto px-6 mb-32">
+            <div class="flex flex-col lg:flex-row gap-16 item-start">
+                <div class="lg:w-1/3 fade-up">
+                    <h2 class="text-3xl font-light text-earth-dark mb-6">把星期一的苦<br>釀成品牌的甜</h2>
+                    <p class="text-earth-muted font-light leading-relaxed">
+                        The Challenge & Approach
+                    </p>
+                </div>
+                <div class="lg:w-2/3 fade-up delay-100">
+                    <p class="text-lg md:text-xl text-earth-dark font-light leading-[1.7] md:leading-[1.6] mb-8">
+                        Blue Harbor以「令人憂鬱的星期一」為隱喻的咖啡品牌，咖啡廳為有Monday
+                        Blue的人們提供短暫的佇足與多巴胺。品牌以深藍、白與螢光粉紅為配色方案，打造出兼具幽默感與潮流感的包裝視覺語言。
+                    </p>
+                    <p class="text-earth-muted font-light leading-relaxed">
+                        VI 系統涵蓋手提袋、帆布袋、咖啡杯、杯套及店頭前導影片，並搭配詼諧的英文標語，在極簡科技美學中注入鮮明的品牌個性，讓每一個觸點都成為記憶點。
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="relative mb-16"
+            style="background-color: #2A2522; width: 101%; margin-left: -0.5%; margin-right: -0.5%;">
+            <div class="fade-up">
+                <div class="w-full p-10 md:p-24 text-center">
+                    <div class="max-w-3xl mx-auto">
+                        <span class="block text-white/50 text-sm tracking-[0.2em] uppercase mb-6">Brand Voice</span>
+                        <h2 class="text-3xl md:text-5xl font-light leading-tight text-white mb-10">Monday is
+                            temporary.<br>This coffee addiction is forever.</h2>
+                        <p class="text-white/70 font-light leading-relaxed text-lg mb-12">
+                            Blue Harbor讓您的憂鬱在短暫停留後，用咖啡因換取小小的愉悅感。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Results / Next Project Navigation -->
+        <section class="max-w-6xl mx-auto px-6 py-12 fade-up">
+            <div
+                class="flex flex-col md:flex-row justify-between items-center gap-10 border-t border-earth-dark/10 pt-10">
+                <div class="text-left">
+                    <h3 class="text-sm font-medium tracking-widest text-earth-sage uppercase mb-2">Outcome</h3>
+                    <p class="text-xl text-earth-dark font-light">建立完整品牌視覺識別系統</p>
+                </div>
+                <a href="Showcase-04.html"
+                    class="group flex items-center gap-4 text-earth-dark font-medium transition-colors hover:text-earth-sage">
+                    <span class="uppercase tracking-widest text-sm">Next Project</span>
+                    <div
+                        class="w-12 h-12 rounded-full border border-earth-dark/20 flex items-center justify-center group-hover:border-earth-sage group-hover:translate-x-2 transition-all">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" stroke-width="1.5"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <section id="contact" class="py-[80px] px-6">
+            <div
+                class="max-w-6xl mx-auto pt-8 text-[10pt] text-[#2A2522] font-light fade-up flex flex-col md:flex-row justify-between items-start md:items-end">
+                <div class="mb-6 md:mb-0 leading-relaxed">
+                    © 2026 Cleo Chang <br>
+                    Visual Designer Freelancer
+                </div>
+                <div class="flex gap-6 leading-relaxed">
+                    <a href="https://www.behance.net/ida2008136c" target="_blank"
+                        class="transition-all hover:text-[#b5aca0] hover:underline">Behance</a>
+                    <a href="#" class="transition-all hover:text-[#b5aca0] hover:underline">Instagram</a>
+                    <a href="#" class="transition-all hover:text-[#b5aca0] hover:underline">Line</a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Back to Top Button -->
+    <a href="#" aria-label="Back to top" id="backToTopBtn"
+        class="fixed bottom-8 right-8 z-50 text-[#2A2522] transition-all duration-300 hover:-translate-y-1 opacity-0 translate-y-4 pointer-events-none">
+        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="12" cy="12" r="11" stroke="currentColor" stroke-width="1.5" />
+            <path d="M12 16V8M12 8L8.5 11.5M12 8L15.5 11.5" stroke="currentColor" stroke-width="1.5"
+                stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+    </a>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const observerOptions = { root: null, rootMargin: '0px', threshold: 0.15 };
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) entry.target.classList.add('is-visible');
+                });
+            }, observerOptions);
+            document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+            const backToTopBtn = document.getElementById('backToTopBtn');
+            if (backToTopBtn) {
+                window.addEventListener('scroll', () => {
+                    if (window.scrollY > window.innerHeight * 0.5) {
+                        backToTopBtn.classList.remove('opacity-0', 'translate-y-4', 'pointer-events-none');
+                        backToTopBtn.classList.add('opacity-[0.30]', 'hover:opacity-60', 'pointer-events-auto');
+                    } else {
+                        backToTopBtn.classList.add('opacity-0', 'translate-y-4', 'pointer-events-none');
+                        backToTopBtn.classList.remove('opacity-[0.30]', 'hover:opacity-60', 'pointer-events-auto');
+                    }
+                });
+            }
+
+            // Handle links back to index.html when inside lightbox iframe
+            if (window.self !== window.top) {
+                const homeLinks = document.querySelectorAll('a[href^="index.html"]');
+                homeLinks.forEach(link => {
+                    link.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        window.parent.postMessage({ type: 'Showcase:CloseParentLightbox' }, '*');
+                        const href = link.getAttribute('href');
+                        if (href === 'index.html' || href === 'index.html/') {
+                            window.parent.scrollTo({ top: 0, behavior: 'smooth' });
+                        }
+                    });
+                });
+            }
+
+            // Video Sound Toggle
+            const video = document.getElementById('project-video');
+            const soundToggle = document.getElementById('sound-toggle');
+            const soundIcon = document.getElementById('sound-icon');
+
+            if (video && soundToggle && soundIcon) {
+                const muteIconPath = "M17.25 9.75L19.5 12m0 0l2.25 2.25M19.5 12l2.25-2.25M19.5 12l-2.25 2.25m-10.5-6L4.5 9H1.5v6h3l4.5 3.75V5.25z";
+                const unmuteIconPath = "M19.114 5.636a9 9 0 010 12.728M16.463 8.288a5.25 5.25 0 010 7.424M6.75 8.25l4.72-4.72a.75.75 0 011.28.53v15.88a.75.75 0 01-1.28.53l-4.72-4.72H4.51c-.88 0-1.704-.507-1.938-1.354A9.01 9.01 0 012.25 12c0-.83.112-1.633.322-2.396C2.806 8.756 3.63 8.25 4.51 8.25H6.75z";
+
+                soundToggle.addEventListener('click', () => {
+                    video.muted = !video.muted;
+                    if (video.muted) {
+                        soundIcon.querySelector('path').setAttribute('d', muteIconPath);
+                    } else {
+                        soundIcon.querySelector('path').setAttribute('d', unmuteIconPath);
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>
