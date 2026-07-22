@@ -840,11 +840,15 @@
     <!-- Scroll & Lightbox Animation Script -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
+            // 標記 JS 已載入，啟動 fade-up 動畫
+            document.documentElement.classList.add('js-ready');
+
             const observerOptions = {
                 root: null,
                 rootMargin: '0px',
                 threshold: 0.15
             };
+
 
             const observer = new IntersectionObserver((entries, observer) => {
                 entries.forEach(entry => {
