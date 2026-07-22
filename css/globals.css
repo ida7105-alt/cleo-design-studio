@@ -1,6 +1,10 @@
 /* globals.css */
 @import './tokens.css';
 
+html {
+  scroll-behavior: smooth;
+}
+
 /* Base styles */
 body {
   background-color: var(--color-earth-bg);
