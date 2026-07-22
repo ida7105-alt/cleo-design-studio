@@ -781,30 +781,25 @@
             const container = document.getElementById('lightbox-container');
             const iframe = document.getElementById('lightbox-iframe');
             const closeBtn = document.getElementById('close-lightbox');
-            const triggers = document.querySelectorAll('.lightbox-trigger');
 
             function openLightbox(url) {
+                if (!url || url === '#') return;
                 iframe.src = url;
-                overlay.classList.remove('pointer-events-none');
-                overlay.classList.add('opacity-100');
-                container.classList.add('is-open');
-                document.body.style.overflow = 'hidden';
+                document.body.classList.add('lightbox-open');
             }
 
             function closeLightbox() {
-                overlay.classList.add('pointer-events-none');
-                overlay.classList.remove('opacity-100');
-                container.classList.remove('is-open');
-                document.body.style.overflow = '';
+                document.body.classList.remove('lightbox-open');
                 setTimeout(() => { iframe.src = ''; }, 500);
             }
 
-            triggers.forEach(trigger => {
-                trigger.addEventListener('click', (e) => {
+            document.addEventListener('click', (e) => {
+                const trigger = e.target.closest('.lightbox-trigger');
+                if (trigger) {
                     e.preventDefault();
                     const href = trigger.getAttribute('href');
                     if (href && href !== '#') openLightbox(href);
-                });
+                }
             });
 
             if (closeBtn) closeBtn.addEventListener('click', closeLightbox);
