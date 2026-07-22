@@ -598,15 +598,15 @@
 
     <!-- Contact Modal -->
     <div id="contact-modal-overlay"
-        style="position:fixed;inset:0;background:rgba(42,37,34,0.55);backdrop-filter:blur(6px);z-index:200;opacity:0;pointer-events:none;transition:opacity .35s ease;display:flex;align-items:center;justify-content:center;padding:16px">
+        class="fixed inset-0 bg-[#2A2522]/55 backdrop-blur-[6px] z-[200] opacity-0 pointer-events-none transition-opacity duration-350 ease-out flex items-center justify-center p-0 md:p-4">
         <div id="contact-modal-box"
-            style="background:#f5f1ec;border-radius:2rem;width:100%;max-width:560px;max-height:90vh;overflow-y:auto;scrollbar-width:none;-ms-overflow-style:none;padding:40px 36px;position:relative;box-shadow:0 30px 80px rgba(42,37,34,0.18);transform:translateY(24px);transition:transform .35s ease;">
+            class="bg-[#f5f1ec] w-full max-w-[560px] h-full max-h-[100vh] max-h-[100dvh] md:h-auto md:max-h-[90vh] overflow-y-auto rounded-none md:rounded-[2rem] p-6 sm:p-8 md:p-10 relative shadow-[0_30px_80px_rgba(42,37,34,0.18)] translate-y-6 transition-transform duration-350 ease-out"
+            style="scrollbar-width:none; -ms-overflow-style:none;">
 
             <!-- Close -->
             <button id="close-contact-modal"
-                style="position:absolute;top:20px;right:20px;width:36px;height:36px;border:none;background:rgba(42,37,34,0.08);border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s"
-                onmouseover="this.style.background='rgba(42,37,34,0.16)'"
-                onmouseout="this.style.background='rgba(42,37,34,0.08)'">
+                class="absolute top-5 right-5 w-9 h-9 border-none bg-[#2A2522]/8 hover:bg-[#2A2522]/16 rounded-full cursor-pointer flex items-center justify-center transition-colors z-10"
+                aria-label="Close modal">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2A2522" stroke-width="2"
                     stroke-linecap="round" stroke-linejoin="round">
                     <line x1="18" y1="6" x2="6" y2="18" />
@@ -615,117 +615,92 @@
             </button>
 
             <!-- Title -->
-            <p
-                style="font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#8A9A86;margin-bottom:24px;font-weight:500">
-                Contact</p>
+            <h3 class="text-xs tracking-[0.2em] uppercase text-earth-sage mb-6 font-medium">
+                Contact</h3>
 
             <!-- Form -->
             <form id="contact-form" action="https://formspree.io/f/mjgqlqea" method="POST"
-                style="display:flex;flex-direction:column;gap:16px">
+                class="flex flex-col gap-4">
 
-                <!-- 稱呼 -->
+                <!-- 姓名 / 稱呼* -->
                 <div>
-                    <label
-                        style="display:block;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#8A9A86;margin-bottom:6px">稱呼</label>
-                    <input type="text" name="name" placeholder="您的姓名"
-                        style="width:100%;border:1px solid rgba(42,37,34,0.15);border-radius:.75rem;padding:12px 16px;background:white;font-size:14px;color:#2A2522;outline:none;transition:border-color .2s;box-sizing:border-box"
-                        onfocus="this.style.borderColor='#8A9A86'"
-                        onblur="this.style.borderColor='rgba(42,37,34,0.15)'">
+                    <label class="block text-xs tracking-[0.12em] uppercase text-earth-sage mb-1.5 font-medium">
+                        姓名 / 稱呼 <span class="text-[#c0756e] font-bold">*</span>
+                    </label>
+                    <input type="text" name="name" placeholder="您的姓名或稱呼" required
+                        class="w-full border border-[#2A2522]/15 focus:border-[#8A9A86] rounded-xl px-4 py-3 bg-white text-sm text-[#2A2522] outline-none transition-colors duration-200 box-border" />
                 </div>
 
-                <!-- 公司名稱 -->
+                <!-- 公司 / 單位 -->
                 <div>
-                    <label
-                        style="display:block;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#8A9A86;margin-bottom:6px">公司名稱</label>
-                    <input type="text" name="company" placeholder="公司名稱或品牌名稱（選填）"
-                        style="width:100%;border:1px solid rgba(42,37,34,0.15);border-radius:.75rem;padding:12px 16px;background:white;font-size:14px;color:#2A2522;outline:none;transition:border-color .2s;box-sizing:border-box"
-                        onfocus="this.style.borderColor='#8A9A86'"
-                        onblur="this.style.borderColor='rgba(42,37,34,0.15)'">
+                    <label class="block text-xs tracking-[0.12em] uppercase text-earth-sage mb-1.5 font-medium">
+                        公司 / 單位
+                    </label>
+                    <input type="text" name="company" placeholder="公司名稱或單位名稱（選填）"
+                        class="w-full border border-[#2A2522]/15 focus:border-[#8A9A86] rounded-xl px-4 py-3 bg-white text-sm text-[#2A2522] outline-none transition-colors duration-200 box-border" />
                 </div>
 
-                <!-- EMAIL -->
+                <!-- Email* -->
                 <div>
-                    <label
-                        style="display:block;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#8A9A86;margin-bottom:6px">Email
-                        <span style="color:#c0756e">*</span></label>
+                    <label class="block text-xs tracking-[0.12em] uppercase text-earth-sage mb-1.5 font-medium">
+                        Email <span class="text-[#c0756e] font-bold">*</span>
+                    </label>
                     <input type="email" name="email" placeholder="your@email.com" required
-                        style="width:100%;border:1px solid rgba(42,37,34,0.15);border-radius:.75rem;padding:12px 16px;background:white;font-size:14px;color:#2A2522;outline:none;transition:border-color .2s;box-sizing:border-box"
-                        onfocus="this.style.borderColor='#8A9A86'"
-                        onblur="this.style.borderColor='rgba(42,37,34,0.15)'">
+                        class="w-full border border-[#2A2522]/15 focus:border-[#8A9A86] rounded-xl px-4 py-3 bg-white text-sm text-[#2A2522] outline-none transition-colors duration-200 box-border" />
                 </div>
 
-                <!-- 電話 -->
+                <!-- 電話 / 手機 -->
                 <div>
-                    <label
-                        style="display:block;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#8A9A86;margin-bottom:6px">電話</label>
-                    <input type="tel" name="phone" placeholder="0912-345-678（選填）"
-                        style="width:100%;border:1px solid rgba(42,37,34,0.15);border-radius:.75rem;padding:12px 16px;background:white;font-size:14px;color:#2A2522;outline:none;transition:border-color .2s;box-sizing:border-box"
-                        onfocus="this.style.borderColor='#8A9A86'"
-                        onblur="this.style.borderColor='rgba(42,37,34,0.15)'">
+                    <label class="block text-xs tracking-[0.12em] uppercase text-earth-sage mb-1.5 font-medium">
+                        電話 / 手機
+                    </label>
+                    <input type="tel" name="phone" placeholder="您的聯絡電話或手機（選填）"
+                        class="w-full border border-[#2A2522]/15 focus:border-[#8A9A86] rounded-xl px-4 py-3 bg-white text-sm text-[#2A2522] outline-none transition-colors duration-200 box-border" />
                 </div>
 
-                <!-- 項目需求 -->
+                <!-- 諮詢項目 -->
                 <div>
-                    <label
-                        style="display:block;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#8A9A86;margin-bottom:10px">項目需求
-                        <span
-                            style="font-size:11px;text-transform:none;letter-spacing:0;color:#b5aca0">（可複選）</span></label>
-                    <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
-                        <label
-                            style="display:flex;align-items:center;gap:8px;font-size:13px;color:#2A2522;cursor:pointer">
-                            <input type="checkbox" name="service" value="平面設計"
-                                style="accent-color:#8A9A86;width:15px;height:15px"> 平面設計
+                    <label class="block text-xs tracking-[0.12em] uppercase text-earth-sage mb-2 font-medium">
+                        諮詢項目 <span class="text-[11px] text-[#b5aca0] font-normal">（可複選）</span>
+                    </label>
+                    <div class="grid grid-cols-2 gap-2.5 sm:grid-cols-3">
+                        <label class="flex items-center gap-2 text-sm text-[#2A2522] cursor-pointer select-none">
+                            <input type="checkbox" name="service" value="品牌視覺系統" class="accent-[#8A9A86] w-4 h-4 rounded" /> 品牌視覺系統
                         </label>
-                        <label
-                            style="display:flex;align-items:center;gap:8px;font-size:13px;color:#2A2522;cursor:pointer">
-                            <input type="checkbox" name="service" value="視覺系統"
-                                style="accent-color:#8A9A86;width:15px;height:15px"> 視覺系統
+                        <label class="flex items-center gap-2 text-sm text-[#2A2522] cursor-pointer select-none">
+                            <input type="checkbox" name="service" value="網站設計" class="accent-[#8A9A86] w-4 h-4 rounded" /> 網站設計
                         </label>
-                        <label
-                            style="display:flex;align-items:center;gap:8px;font-size:13px;color:#2A2522;cursor:pointer">
-                            <input type="checkbox" name="service" value="包裝設計"
-                                style="accent-color:#8A9A86;width:15px;height:15px"> 包裝設計
+                        <label class="flex items-center gap-2 text-sm text-[#2A2522] cursor-pointer select-none">
+                            <input type="checkbox" name="service" value="社群經營" class="accent-[#8A9A86] w-4 h-4 rounded" /> 社群經營
                         </label>
-                        <label
-                            style="display:flex;align-items:center;gap:8px;font-size:13px;color:#2A2522;cursor:pointer">
-                            <input type="checkbox" name="service" value="網站設計"
-                                style="accent-color:#8A9A86;width:15px;height:15px"> 網站設計
+                        <label class="flex items-center gap-2 text-sm text-[#2A2522] cursor-pointer select-none">
+                            <input type="checkbox" name="service" value="包裝設計" class="accent-[#8A9A86] w-4 h-4 rounded" /> 包裝設計
                         </label>
-                        <label
-                            style="display:flex;align-items:center;gap:8px;font-size:13px;color:#2A2522;cursor:pointer">
-                            <input type="checkbox" name="service" value="品牌社群"
-                                style="accent-color:#8A9A86;width:15px;height:15px"> 品牌社群
-                        </label>
-                        <label
-                            style="display:flex;align-items:center;gap:8px;font-size:13px;color:#2A2522;cursor:pointer">
-                            <input type="checkbox" name="service" value="其它"
-                                style="accent-color:#8A9A86;width:15px;height:15px"> 其它
+                        <label class="flex items-center gap-2 text-sm text-[#2A2522] cursor-pointer select-none">
+                            <input type="checkbox" name="service" value="其他" class="accent-[#8A9A86] w-4 h-4 rounded" /> 其他
                         </label>
                     </div>
                 </div>
 
-                <!-- 簡述需求 -->
+                <!-- 請簡述需求或填無* -->
                 <div>
-                    <label
-                        style="display:block;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#8A9A86;margin-bottom:6px">簡述您的需求</label>
-                    <textarea name="message" rows="4" placeholder="告訴我您的品牌現況、目標與任務時程..."
-                        style="width:100%;border:1px solid rgba(42,37,34,0.15);border-radius:.75rem;padding:12px 16px;background:white;font-size:14px;color:#2A2522;outline:none;transition:border-color .2s;box-sizing:border-box;resize:vertical;font-family:inherit"
-                        onfocus="this.style.borderColor='#8A9A86'"
-                        onblur="this.style.borderColor='rgba(42,37,34,0.15)'"></textarea>
+                    <label class="block text-xs tracking-[0.12em] uppercase text-earth-sage mb-1.5 font-medium">
+                        請簡述需求或填無 <span class="text-[#c0756e] font-bold">*</span>
+                    </label>
+                    <textarea name="message" rows="3" placeholder="請在此簡述您的需求，若無需求請填無..." required
+                        class="w-full border border-[#2A2522]/15 focus:border-[#8A9A86] rounded-xl px-4 py-3 bg-white text-sm text-[#2A2522] outline-none transition-colors duration-200 box-border resize-none font-sans"></textarea>
                 </div>
 
                 <!-- Submit -->
                 <button type="submit" id="contact-submit-btn"
-                    style="margin-top:8px;background:#2A2522;color:white;border:none;border-radius:.75rem;padding:14px 32px;font-size:13px;letter-spacing:.18em;text-transform:uppercase;cursor:pointer;transition:background .2s,transform .15s;font-family:inherit"
-                    onmouseover="this.style.background='#3d3633'" onmouseout="this.style.background='#2A2522'"
-                    onmousedown="this.style.transform='scale(0.98)'" onmouseup="this.style.transform='scale(1)'">
+                    class="mt-2 bg-[#2A2522] hover:bg-[#3d3633] active:scale-98 text-white border-none rounded-xl py-3.5 px-8 text-xs tracking-[0.18em] uppercase cursor-pointer transition-all duration-150 font-sans font-medium">
                     Submit
                 </button>
             </form>
 
             <!-- Success message -->
-            <div id="contact-success" style="display:none;text-align:center;padding:40px 0">
-                <p style="font-size:1.1rem;font-weight:300;color:#2A2522;line-height:1.7">填寫完成，收到後將會以Email聯繫</p>
+            <div id="contact-success" class="hidden text-center py-10">
+                <p class="text-lg font-light text-[#2A2522] leading-relaxed">填寫完成，收到後將會以 Email 聯繫</p>
             </div>
         </div>
     </div>
@@ -737,10 +712,6 @@
                 const box = document.getElementById('contact-modal-box');
                 const form = document.getElementById('contact-form');
                 const success = document.getElementById('contact-success');
-                const openBtns = [
-                    document.getElementById('open-contact-modal'),
-                    document.getElementById('nav-contact-btn')
-                ];
                 const closeBtn = document.getElementById('close-contact-modal');
 
                 function openModal() {
@@ -757,7 +728,15 @@
                     document.body.style.overflow = '';
                 }
 
-                openBtns.forEach(btn => { if (btn) btn.addEventListener('click', openModal); });
+                // 使用事件委派監聽 Contact 按鈕
+                document.addEventListener('click', function (e) {
+                    const btn = e.target.closest('#nav-contact-btn') || e.target.closest('#open-contact-modal');
+                    if (btn) {
+                        e.preventDefault();
+                        openModal();
+                    }
+                });
+
                 if (closeBtn) closeBtn.addEventListener('click', closeModal);
                 if (overlay) overlay.addEventListener('click', function (e) { if (e.target === overlay) closeModal(); });
 
