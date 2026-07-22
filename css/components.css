@@ -13,8 +13,6 @@
 .section-padding {
   padding-top: var(--spacing-section-y);
   padding-bottom: var(--spacing-section-y);
-  padding-left: var(--spacing-px);
-  padding-right: var(--spacing-px);
 }
 
 @media (min-width: 768px) {
