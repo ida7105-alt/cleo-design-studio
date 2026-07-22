@@ -125,15 +125,15 @@
     var c = createCanvas(w, h);
     var ctx = c.getContext('2d');
 
-    // 1. 滿塗柔亮米白背景色 #FAF9F6
-    ctx.fillStyle = '#FAF9F6';
+    // 1. 滿塗米白大地背景色 #F7F6F0
+    ctx.fillStyle = '#F7F6F0';
     ctx.fillRect(0, 0, w, h);
 
-    // 2. 模擬網頁 floating blobs，繪製淡綠色 #A8B8A5 的大模糊圓
+    // 2. 模擬網頁 floating blobs，繪製柔和鼠尾草綠 #99AA94 的大模糊圓
     // blob 1 (偏左上)
     var g1 = ctx.createRadialGradient(w * 0.15, h * 0.15, 0, w * 0.15, h * 0.15, w * 0.45);
-    g1.addColorStop(0, 'rgba(168, 184, 165, 0.4)');
-    g1.addColorStop(1, 'rgba(168, 184, 165, 0)');
+    g1.addColorStop(0, 'rgba(153, 170, 148, 0.48)');
+    g1.addColorStop(1, 'rgba(153, 170, 148, 0)');
     ctx.fillStyle = g1;
     ctx.beginPath();
     ctx.arc(w * 0.15, h * 0.15, w * 0.45, 0, Math.PI * 2);
@@ -141,8 +141,8 @@
 
     // blob 2 (偏右下)
     var g2 = ctx.createRadialGradient(w * 0.85, h * 0.85, 0, w * 0.85, h * 0.85, w * 0.45);
-    g2.addColorStop(0, 'rgba(168, 184, 165, 0.4)');
-    g2.addColorStop(1, 'rgba(168, 184, 165, 0)');
+    g2.addColorStop(0, 'rgba(153, 170, 148, 0.48)');
+    g2.addColorStop(1, 'rgba(153, 170, 148, 0)');
     ctx.fillStyle = g2;
     ctx.beginPath();
     ctx.arc(w * 0.85, h * 0.85, w * 0.45, 0, Math.PI * 2);

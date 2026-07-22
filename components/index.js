@@ -44,7 +44,7 @@ class CleoSectionHeader extends HTMLElement {
     this.innerHTML = /* html */ `
       <div class="${alignClass} ${mbClass} fade-up${delayClass}">
         <span class="text-label">${label}</span>
-        <h2 class="text-title">${title}</h2>
+        <h2 class="section-h2-animate text-title">${title}</h2>
         ${bodyHTML ? `<p class="mt-6 text-body ${bodyMaxW}">${bodyHTML}</p>` : ''}
       </div>
     `;

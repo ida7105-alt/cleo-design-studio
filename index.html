@@ -82,9 +82,20 @@
     <link rel="stylesheet" href="./css/components.css">
     <script src="./components/index.js" defer></script>
     <script src="./components/media-loader.js" defer></script>
+
+    <!-- GSAP CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 </head>
 
 <body class="antialiased relative">
+
+    <!-- ═══ Preloader ═══════════════════════════════════════════════════════ -->
+    <div id="hero-preloader" role="status" aria-label="載入中">
+        <div class="preloader-mark">
+            <img src="./img/Cleo-logo.svg" alt="Cleo" aria-hidden="true">
+            <div class="preloader-bar" aria-hidden="true"></div>
+        </div>
+    </div>
 
     <!-- Ambient Background -->
     <div class="blob blob-1"></div>
@@ -103,7 +114,8 @@
             <canvas id="rain-canvas" class="absolute inset-0 z-0 w-full h-full pointer-events-none"></canvas>
 
             <div class="w-full relative z-10 select-none">
-                <div class="p-10 md:p-20 text-center fade-up">
+                <!-- hero-fade-group：GSAP 控制，覆蓋 IntersectionObserver fade-up -->
+                <div class="p-10 md:p-20 text-center hero-fade-group">
                     <div class="max-w-5xl mx-auto">
                         <h1 class="text-4xl md:text-6xl lg:text-7xl font-light text-earth-dark leading-[1.2] mb-8">
                             讓品牌<br />被理解，也被選擇
@@ -111,21 +123,21 @@
                         <div class="max-w-2xl mx-auto relative">
                             <!-- Decorative Background Text (Desktop) -->
                             <div
-                                class="hidden lg:block absolute left-[-20vw] xl:left-[-28vw] top-[0.5em] text-earth-dark text-sm font-medium tracking-[0.2em] uppercase pointer-events-none">
+                                class="hero-side-text hidden lg:block absolute left-[-20vw] xl:left-[-28vw] top-[0.5em] text-earth-dark text-sm font-medium tracking-[0.2em] uppercase pointer-events-none">
                                 From Chaos
                             </div>
                             <div
-                                class="hidden lg:block absolute right-[-20vw] xl:right-[-28vw] top-[0.5em] text-earth-dark text-sm font-medium tracking-[0.2em] uppercase pointer-events-none">
+                                class="hero-side-text hidden lg:block absolute right-[-20vw] xl:right-[-28vw] top-[0.5em] text-earth-dark text-sm font-medium tracking-[0.2em] uppercase pointer-events-none">
                                 to Clarity
                             </div>
 
-                            <p class="text-earth-muted text-lg md:text-xl font-light leading-relaxed mb-10">
+                            <p class="hero-subtitle text-earth-muted text-lg md:text-xl font-light leading-relaxed mb-10">
                                 協助品牌從混亂到清晰，建立有辨識度且可持續運作的視覺系統。<br class="hidden md:block" />
                                 讓我們一起找到專屬的品牌記憶點。
                             </p>
                             <!-- Scroll Down Animation -->
                             <a href="#works"
-                                class="relative w-[141px] h-[141px] flex items-center justify-center mx-auto group mt-[60px]">
+                                class="hero-scroll-btn relative w-[141px] h-[141px] flex items-center justify-center mx-auto group mt-[60px]">
                                 <!-- 1. 外圈旋轉文字 -->
                                 <div class="absolute inset-0 animate-spin-slow">
                                     <svg viewBox="0 0 100 100" class="w-full h-full scale-[1.2]">
@@ -312,7 +324,7 @@
                             <div class="md:w-1/3">
                                 <span class="block text-earth-sage text-sm tracking-[0.2em] uppercase mb-4">What I
                                     Do</span>
-                                <h2 class="text-3xl md:text-4xl font-light text-earth-dark mb-6">協助品牌<br>開始運作</h2>
+                                <h2 class="section-h2-animate text-3xl md:text-4xl font-light text-earth-dark mb-6">協助品牌<br>開始運作</h2>
                                 <p class="text-earth-muted font-light leading-relaxed">
                                     為您打造可以長期運作的品牌系統，不只是單點的視覺設計，而是完整的品牌佈局。
                                 </p>
@@ -374,7 +386,7 @@
                             <div class="lg:w-1/2 fade-up">
                                 <span class="block text-earth-sage text-sm tracking-[0.2em] uppercase mb-4">Design with
                                     Intention, Not Decoration</span>
-                                <h2 class="text-3xl md:text-5xl font-light text-earth-dark leading-tight mb-8 fade-up">
+                                <h2 class="section-h2-animate text-3xl md:text-5xl font-light text-earth-dark leading-tight mb-8">
                                     關於塑形<br>是一段把想法變清楚的過程
                                 </h2>
 
@@ -485,7 +497,7 @@
                         <div class="text-center mb-14 md:mb-20 fade-up">
                             <span class="block text-earth-sage text-sm tracking-[0.2em] uppercase mb-4">How We Work
                                 Together</span>
-                            <h2 class="text-3xl md:text-5xl font-light text-earth-dark">讓合作變得簡單而安心</h2>
+                            <h2 class="section-h2-animate text-3xl md:text-5xl font-light text-earth-dark">讓合作變得簡單而安心</h2>
                             <p class="mt-6 text-earth-muted font-light">每個階段皆有明確交付內容，確保合作過程透明、高效且可控。</p>
                         </div>
 
@@ -508,11 +520,12 @@
                 <!-- Footer / CTA -->
                 <section id="contact" class="pt-[24px] pb-[60px] md:py-[115px] px-3 sm:px-6">
                     <div
-                        class="max-w-5xl mx-auto glass-panel rounded-[2rem] sm:rounded-[3rem] p-5 sm:p-12 md:p-24 text-center fade-up flex flex-col items-center mb-12">
-                        <h2 class="text-4xl md:text-6xl font-light text-earth-dark leading-tight mb-8">
-                            Remember the Name. <br>Choose the Best.
+                        id="cta-panel"
+                        class="max-w-5xl mx-auto glass-panel rounded-[2rem] sm:rounded-[3rem] p-5 sm:p-12 md:p-24 text-center flex flex-col items-center mb-12">
+                        <h2 id="cta-heading" class="text-4xl md:text-6xl font-light text-earth-dark leading-tight mb-8">
+                            <span class="cta-line" style="display:block;">Remember the Name.</span><span class="cta-line" style="display:block;">Choose the Best.</span>
                         </h2>
-                        <p class="text-earth-muted text-lg font-light mb-12 max-w-2xl mx-auto">
+                        <p id="cta-body" class="text-earth-muted text-lg font-light mb-12 max-w-2xl mx-auto">
                             準備好讓您的品牌更清晰了嗎？讓我幫你梳理脈絡，建立專屬的視覺系統。
                         </p>
                         <button id="open-contact-modal" class="custom-btn uppercase">
@@ -522,7 +535,9 @@
 
                     <!-- 個人介紹卡片 -->
                     <div
-                        class="max-w-5xl mx-auto bg-earth-dark rounded-[2rem] sm:rounded-[3rem] p-5 sm:p-8 md:p-12 fade-up shadow-xl relative z-10 tilt-card">
+                        id="about-card"
+                        class="max-w-5xl mx-auto bg-earth-dark rounded-[2rem] sm:rounded-[3rem] p-5 sm:p-8 md:p-12 fade-up shadow-xl relative z-10 tilt-card"
+                        style="overflow:hidden;">
                         <div class="flex flex-col sm:flex-row gap-8 md:gap-12 items-center text-left">
                             <!-- 文字內容 -->
                             <div class="sm:w-[60%] flex flex-col justify-center">
@@ -738,7 +753,10 @@
                 });
 
                 if (closeBtn) closeBtn.addEventListener('click', closeModal);
-                if (overlay) overlay.addEventListener('click', function (e) { if (e.target === overlay) closeModal(); });
+                if (overlay) {
+                    overlay.addEventListener('click', function (e) { if (e.target === overlay) closeModal(); });
+                    overlay.addEventListener('touchstart', function (e) { if (e.touches.length > 1) e.preventDefault(); }, { passive: false });
+                }
 
                 if (form) {
                     form.addEventListener('submit', function (e) {
@@ -822,6 +840,84 @@
             }, observerOptions);
             document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
 
+            // ── CTA Section: GSAP stagger fade-up (同 Hero 下往上淡入) ──
+            if (typeof gsap !== 'undefined') {
+                const ctaLines  = document.querySelectorAll('#cta-heading .cta-line');
+                const ctaBody   = document.getElementById('cta-body');
+                const ctaPanel  = document.getElementById('cta-panel');
+
+                if (ctaPanel && ctaLines.length) {
+                    // 初始隱藏
+                    gsap.set([ctaLines, ctaBody].filter(Boolean), { opacity: 0, y: 50 });
+
+                    const ctaObserver = new IntersectionObserver((entries) => {
+                        entries.forEach(entry => {
+                            if (!entry.isIntersecting) return;
+                            ctaObserver.unobserve(entry.target);
+
+                            const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
+                            tl.to(ctaLines, {
+                                y: 0,
+                                opacity: 1,
+                                duration: 1.1,
+                                stagger: 0.18,
+                            });
+                            if (ctaBody) {
+                                tl.to(ctaBody, { y: 0, opacity: 1, duration: 0.9 }, '-=0.65');
+                            }
+                        });
+                    }, { threshold: 0.25 });
+
+                    ctaObserver.observe(ctaPanel);
+                }
+            }
+
+            // ── 通用 section h2 下往上淡入（所有 .section-h2-animate） ──
+            // rAF 確保 custom elements 的 innerHTML 已寫入
+            requestAnimationFrame(() => {
+                if (typeof gsap === 'undefined') return;
+
+                document.querySelectorAll('.section-h2-animate').forEach(h2 => {
+                    // 依 <br> 拆行，不改 h2 原始結構時先嘗試拆 inner HTML
+                    const rawHtml = h2.innerHTML;
+                    const lineStrings = rawHtml
+                        .split(/<br\s*\/?>/i)
+                        .map(s => s.trim())
+                        .filter(Boolean);
+
+                    let lineEls;
+                    if (lineStrings.length >= 2) {
+                        // 多行：wrap 成 span
+                        h2.innerHTML = lineStrings
+                            .map(line => `<span class="sh2-line" style="display:block;">${line}</span>`)
+                            .join('');
+                        lineEls = Array.from(h2.querySelectorAll('.sh2-line'));
+                    } else {
+                        // 單行：整個 h2 當一個元素
+                        lineEls = [h2];
+                    }
+
+                    // 設初始狀態
+                    gsap.set(lineEls, { opacity: 0, y: 50 });
+
+                    const obs = new IntersectionObserver((entries) => {
+                        entries.forEach(entry => {
+                            if (!entry.isIntersecting) return;
+                            obs.unobserve(entry.target);
+                            gsap.to(lineEls, {
+                                y: 0,
+                                opacity: 1,
+                                duration: 1.1,
+                                stagger: 0.18,
+                                ease: 'power3.out',
+                            });
+                        });
+                    }, { threshold: 0.2 });
+
+                    obs.observe(h2);
+                });
+            });
+
             const backToTopBtn = document.getElementById('backToTopBtn');
             if (backToTopBtn) {
                 window.addEventListener('scroll', () => {
@@ -837,6 +933,7 @@
         });
     </script>
     <script src="./components/rain-effect.js" defer></script>
+    <script src="./components/hero-effects.js" defer></script>
 </body>
 
 </html>
