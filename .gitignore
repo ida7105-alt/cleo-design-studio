@@ -1,0 +1,9 @@
+*.crswap
+.DS_Store
+node_modules/
+
+# Build tooling (local dev only, not needed for GitHub Pages)
+package.json
+package-lock.json
+tailwind.config.js
+tailwind.input.css
