@@ -7,3 +7,6 @@ package.json
 package-lock.json
 tailwind.config.js
 tailwind.input.css
+
+# Video files (too large for git, host externally)
+*.mp4
