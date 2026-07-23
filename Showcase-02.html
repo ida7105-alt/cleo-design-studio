@@ -40,30 +40,8 @@
         rel="stylesheet">
 
     <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Inter', 'Noto Sans TC', 'sans-serif'],
-                    },
-                    colors: {
-                        earth: {
-                            bg: '#eff1e6',
-                            dark: '#2A2522',
-                            muted: '#58504a',
-                            sage: '#8A9A86',
-                            sand: '#b5aca0'
-                        }
-                    },
-                    boxShadow: {
-                        'glass': '0 8px 32px 0 rgba(42, 37, 34, 0.04)',
-                    }
-                }
-            }
-        }
-    </script>
+    <script src="./components/media-loader.js" defer></script>
+    <link rel="stylesheet" href="./css/tailwind.css">
 
     <style>
         body {
@@ -108,15 +86,13 @@
 <body class="antialiased selection:bg-earth-sage selection:text-white relative">
 
     <!-- Navigation -->
-    <nav class="fixed w-full top-0 z-50 p-6">
-        <div class="max-w-6xl mx-auto glass-panel rounded-full px-8 py-4 flex justify-between items-center">
+    <nav class="fixed w-full top-0 z-50 p-4 md:p-6">
+        <div
+            class="max-w-6xl mx-auto glass-panel rounded-full pl-5 pr-14 py-3 md:px-8 md:py-4 flex justify-between items-center">
             <a href="index.html" target="_top" class="block transition-transform hover:scale-105">
                 <img src="./img/Cleo-logo.svg" alt="Cleo Logo" class="h-[57px] w-auto">
             </a>
-            <div class="flex items-center gap-6">
-                <a href="index.html?contact=open"
-                    class="text-sm font-medium hover:text-earth-sage transition-colors text-earth-muted">Contact</a>
-            </div>
+
         </div>
     </nav>
 
@@ -135,7 +111,7 @@
                 <div
                     class="grid grid-cols-1 md:grid-cols-4 gap-8 border-t border-earth-dark/10 pt-10 fade-up delay-100">
                     <div>
-                        <h4 class="text-sm font-medium tracking-widest text-earth-sage uppercase mb-2">Brand</h4>
+                        <h4 class="text-sm font-medium tracking-widest text-earth-sage uppercase mb-2">Client</h4>
                         <p class="text-earth-muted text-sm font-light leading-relaxed">
                             <a href="https://www.jacollezione.com/" target="_blank" rel="noopener noreferrer"
                                 class="hover:text-earth-sage transition-colors inline-flex items-center gap-1 group">
@@ -150,7 +126,9 @@
                     </div>
                     <div>
                         <h4 class="text-sm font-medium tracking-widest text-earth-sage uppercase mb-2">Services</h4>
-                        <p class="text-earth-muted text-sm font-light leading-relaxed">Brand Website
+                        <p class="text-earth-muted text-sm font-light leading-relaxed">Brand Strategy</br>
+                            UI/UX Design</br>
+                            Web Development
                         </p>
                     </div>
                     <div>
@@ -159,7 +137,7 @@
                     </div>
                     <div>
                         <h4 class="text-sm font-medium tracking-widest text-earth-sage uppercase mb-2">Year</h4>
-                        <p class="text-earth-muted text-sm font-light leading-relaxed">2026</p>
+                        <p class="text-earth-muted text-sm font-light leading-relaxed">2024</p>
                     </div>
                 </div>
             </div>
@@ -168,7 +146,7 @@
         <!-- Main Banner Image -->
         <section class="px-6 mb-14 md:mb-24 fade-up">
             <div class="max-w-6xl mx-auto w-full aspect-[21/11.385] md:aspect-[2.5/1.265] overflow-hidden">
-                <img src="./img/showcase-02.webp" alt="J&amp;A Collezione vita Hero Banner"
+                <img src="./img/showcase-bn-02.webp" alt="J&amp;A Collezione vita Hero Banner"
                     class="w-full h-full object-cover">
             </div>
         </section>
@@ -184,10 +162,12 @@
                 </div>
                 <div class="lg:w-2/3 fade-up delay-100">
                     <p class="text-lg md:text-xl text-earth-dark font-light leading-[1.7] md:leading-[1.6] mb-8">
-                        J&amp;A Collezione vita 擁有深厚的專業底蘊，具備自家家具工廠的製造與訂製實力，並獨家代理 Restonic 美國蕾絲床墊。品牌致力於將頂級睡眠工藝與現代家居美學融為一體，打造全方位的舒適生活體驗。
+                        J&amp;A Collezione vita 擁有深厚的專業底蘊，具備自家家具工廠的製造與訂製實力，並代理台北區美國蕾絲床墊
+                        Restonic。品牌致力於將頂級睡眠工藝與現代家居美學融為一體，打造全方位的舒適生活體驗。空間全面採取預約制，以保障訪客的絕對隱私，並為每一位客戶保留完整且專屬的諮詢時間。
                     </p>
                     <p class="text-earth-muted font-light leading-relaxed">
-                        視覺設計以溫潤自然的大地色調與細緻極簡的文字編排為主，從自有工廠的職人工藝細節，到 Restonic 蕾絲床墊帶來的包覆睡眠感，建構出一套深具溫度的品牌視覺系統，完美演繹舒適睡眠與空間生活的平衡。
+                        視覺設計以溫潤自然的大地色調與細緻極簡的文字編排為主，從自有工廠的職人工藝細節，到美國蕾絲床墊 Restonic
+                        帶來的包覆睡眠感，建構出一套深具溫度的品牌視覺系統，完美演繹舒適睡眠與空間生活的平衡。
                     </p>
                 </div>
             </div>
@@ -200,48 +180,24 @@
                     <span class="block text-earth-sage text-sm tracking-[0.2em] uppercase mb-4">Visual Details</span>
                     <h3 class="text-2xl font-light text-earth-dark mb-4">工藝製造與頂級睡眠的交織</h3>
                     <p class="text-earth-muted font-light leading-relaxed">
-                        結合自有工廠的精準訂製技術與代理 Restonic 美國蕾絲床墊的舒適底蘊，透過視覺將頂級睡眠質感與居家空間揉合，為使用者轉化為可觸可感的理想生活提案。
+                        結合自有工廠的精準訂製技術與代理美國蕾絲床墊的舒適體驗，透過視覺將頂級睡眠質感與居家空間揉合，為來訪者提供可現場體驗的理想生活提案。
                     </p>
                 </div>
                 <div class="fade-up delay-100">
                     <div class="w-full overflow-hidden cursor-pointer showcase-trigger" id="showcase-trigger-1">
-                        <img src="./img/showcase-02-2.webp" alt="Showcase Detail Mockup 1"
+                        <img src="./img/showcase-02.webp" alt="Showcase Detail Mockup 1"
                             class="w-full h-auto transition-transform duration-500 hover:scale-[1.02]">
                     </div>
                 </div>
                 <div class="fade-up delay-100">
                     <div class="w-full overflow-hidden cursor-pointer showcase-trigger" id="showcase-trigger-2">
-                        <img src="./img/showcase-02-3.webp" alt="Showcase Detail Mockup 2"
+                        <img src="./img/showcase-02-2.webp" alt="Showcase Detail Mockup 2"
                             class="w-full h-auto transition-transform duration-500 hover:scale-[1.02]">
                     </div>
                 </div>
                 <div class="fade-up delay-100">
                     <div class="w-full overflow-hidden cursor-pointer showcase-trigger" id="showcase-trigger-3">
-                        <img src="./img/bn-02.webp" alt="Showcase Detail Mockup 3"
-                            class="w-full h-auto transition-transform duration-500 hover:scale-[1.02]">
-                    </div>
-                </div>
-                <div class="fade-up delay-100">
-                    <div class="w-full overflow-hidden cursor-pointer showcase-trigger" id="showcase-trigger-4">
-                        <img src="./img/showcase-02.webp" alt="Showcase Detail Mockup 4"
-                            class="w-full h-auto transition-transform duration-500 hover:scale-[1.02]">
-                    </div>
-                </div>
-                <div class="fade-up delay-100">
-                    <div class="w-full overflow-hidden cursor-pointer showcase-trigger" id="showcase-trigger-5">
-                        <img src="./img/showcase-02-2.webp" alt="Showcase Detail Mockup 5"
-                            class="w-full h-auto transition-transform duration-500 hover:scale-[1.02]">
-                    </div>
-                </div>
-                <div class="fade-up delay-100">
-                    <div class="w-full overflow-hidden cursor-pointer showcase-trigger" id="showcase-trigger-6">
-                        <img src="./img/showcase-02-3.webp" alt="Showcase Detail Mockup 6"
-                            class="w-full h-auto transition-transform duration-500 hover:scale-[1.02]">
-                    </div>
-                </div>
-                <div class="fade-up delay-100">
-                    <div class="w-full overflow-hidden cursor-pointer showcase-trigger" id="showcase-trigger-7">
-                        <img src="./img/bn-02.webp" alt="Showcase Detail Mockup 7"
+                        <img src="./img/showcase-02-3.webp" alt="Showcase Detail Mockup 3"
                             class="w-full h-auto transition-transform duration-500 hover:scale-[1.02]">
                     </div>
                 </div>
@@ -257,7 +213,7 @@
                         <h2 class="text-3xl md:text-5xl font-light leading-tight text-earth-bg mb-10">
                             Crafting elegant spaces.<br>Elevating everyday life.</h2>
                         <p class="text-white/70 font-light leading-relaxed text-lg mb-12">
-                            憑藉自有工廠的嚴謹工藝與代理 Restonic 美國蕾絲床墊的極致舒適，我們不只創造家具，更鋪陳全方位的舒適睡眠生活體驗。
+                            憑藉自有工廠的嚴謹工藝與代理美國蕾絲床墊Restonic的極致舒適，我們不只創造家具，更鋪陳全方位的舒適睡眠生活體驗。
                         </p>
                     </div>
                 </div>
@@ -266,23 +222,37 @@
 
         <!-- Results / Next Project Navigation -->
         <section class="max-w-6xl mx-auto px-6 py-12 fade-up">
-            <div
-                class="flex flex-col md:flex-row justify-between items-center gap-10 border-t border-earth-dark/10 pt-10">
+            <div class="border-t border-earth-dark/10 pt-10 flex flex-col gap-10">
                 <div class="text-left">
                     <h3 class="text-sm font-medium tracking-widest text-earth-sage uppercase mb-2">Outcome</h3>
-                    <p class="text-xl text-earth-dark font-light">精品家具品牌官網建置</p>
+                    <p class="text-xl text-earth-dark font-light">結合廣告行銷，進站人數增加70%</p>
                 </div>
-                <a href="Showcase-03.html"
-                    class="group flex items-center gap-4 text-earth-dark font-medium transition-colors hover:text-earth-sage">
-                    <span class="uppercase tracking-widest text-sm">Next Project</span>
-                    <div
-                        class="w-12 h-12 rounded-full border border-earth-dark/20 flex items-center justify-center group-hover:border-earth-sage group-hover:translate-x-2 transition-all">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" stroke-width="1.5"
-                                stroke-linecap="round" stroke-linejoin="round" />
-                        </svg>
-                    </div>
-                </a>
+                <div class="flex flex-row justify-between items-center w-full">
+                    <a href="Showcase-01.html"
+                        class="group flex items-center gap-2 sm:gap-4 text-earth-dark font-medium transition-colors hover:text-earth-sage">
+                        <div
+                            class="w-10 h-10 sm:w-12 sm:h-12 rounded-full border border-earth-dark/20 flex items-center justify-center group-hover:border-earth-sage group-hover:-translate-x-2 transition-all">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M19 12H5M5 12L11 6M5 12L11 18" stroke="currentColor" stroke-width="1.5"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </div>
+                        <span class="uppercase tracking-widest text-xs sm:text-sm">Previous</span>
+                    </a>
+                    <a href="Showcase-03.html"
+                        class="group flex items-center gap-2 sm:gap-4 text-earth-dark font-medium transition-colors hover:text-earth-sage">
+                        <span class="uppercase tracking-widest text-xs sm:text-sm">Next</span>
+                        <div
+                            class="w-10 h-10 sm:w-12 sm:h-12 rounded-full border border-earth-dark/20 flex items-center justify-center group-hover:border-earth-sage group-hover:translate-x-2 transition-all">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" stroke-width="1.5"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </div>
+                    </a>
+                </div>
             </div>
         </section>
 
@@ -292,7 +262,7 @@
                 class="max-w-6xl mx-auto pt-8 text-[10pt] text-[#2A2522] font-light fade-up flex flex-col md:flex-row justify-between items-center md:items-end text-center md:text-left">
                 <div class="mb-6 md:mb-0 leading-relaxed text-center md:text-left">
                     © 2026 Cleo Chang <br>
-                    Visual Designer Freelancer
+                    Visual Designer Freelancer. All Rights Reserved.
                 </div>
                 <div class="flex justify-center md:justify-end leading-relaxed text-center md:text-right">
                     <a href="https://www.behance.net/ida2008136c" target="_blank"

@@ -1,6 +1,10 @@
 /* globals.css */
 @import './tokens.css';
 
+html {
+  scroll-behavior: smooth;
+}
+
 /* Base styles */
 body {
   background-color: var(--color-earth-bg);
@@ -13,20 +17,40 @@ body.bg-alt {
   background-color: var(--color-earth-bg-alt);
 }
 
+/* 全站文字反白：淡鼠尾草綠 */
+::selection {
+  background-color: rgba(138, 154, 134, 0.32);
+  color: #2A2522;
+}
+::-moz-selection {
+  background-color: rgba(138, 154, 134, 0.32);
+  color: #2A2522;
+}
+
+/* 深色 About 卡片：反白文字改白色 */
+#about-card ::selection {
+  background-color: rgba(138, 154, 134, 0.45);
+  color: #ffffff;
+}
+#about-card ::-moz-selection {
+  background-color: rgba(138, 154, 134, 0.45);
+  color: #ffffff;
+}
+
 /* Ambient Background Blobs */
 .blob {
   position: fixed;
   border-radius: 50%;
   filter: blur(80px);
   z-index: -1;
-  opacity: 0.4;
+  opacity: 0.48;
   animation: float 20s ease-in-out infinite;
 }
 
 .blob-1 {
   width: 50vw;
   height: 50vw;
-  background: #A8B8A5; /* Lightened Sage */
+  background: #99AA94; /* Soft Sage */
   top: -10vw;
   left: -10vw;
 }
@@ -34,7 +58,7 @@ body.bg-alt {
 .blob-2 {
   width: 40vw;
   height: 40vw;
-  background: #A8B8A5; /* Lightened Sage */
+  background: #99AA94; /* Soft Sage */
   bottom: -5vw;
   right: -5vw;
   animation-delay: -5s;
@@ -257,6 +281,7 @@ body.lightbox-open .lightbox-overlay {
   position: sticky;
   top: 0;
   z-index: 1;
+  background-color: #F7F6F0;
 }
 
 .main-content-wrapper {
@@ -334,6 +359,96 @@ body.bg-alt .main-content-wrapper {
   z-index: 1;
 }
 
+/* ─── Preloader ────────────────────────────────────────────────────────────── */
+body.preloader-active {
+  overflow: hidden;
+}
+
+#hero-preloader {
+  position: fixed;
+  inset: 0;
+  z-index: 9998;
+  background-color: #F7F6F0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  /* 進場：立即可見 */
+  opacity: 1;
+  transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+#hero-preloader.is-leaving {
+  opacity: 0;
+}
+
+.preloader-mark {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+  opacity: 1;
+  animation: preloader-breathe 1.8s ease-in-out infinite;
+}
+
+.preloader-mark img {
+  height: 52px;
+  width: auto;
+  opacity: 0.75;
+}
+
+.preloader-bar {
+  width: 40px;
+  height: 1.5px;
+  background: var(--color-earth-dark);
+  opacity: 0.25;
+  position: relative;
+  overflow: hidden;
+  border-radius: 2px;
+}
+
+.preloader-bar::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--color-earth-sage);
+  transform: translateX(-100%);
+  animation: preloader-bar-slide 1.6s cubic-bezier(0.76, 0, 0.24, 1) infinite;
+  border-radius: 2px;
+}
+
+@keyframes preloader-breathe {
+  0%, 100% { opacity: 0.75; }
+  50%       { opacity: 1;    }
+}
+
+@keyframes preloader-bar-slide {
+  0%   { transform: translateX(-100%); }
+  50%  { transform: translateX(0%);    }
+  100% { transform: translateX(100%);  }
+}
+
+/* ─── Hero Split Text ──────────────────────────────────────────────────────── */
+/* 每行獨立 span，GSAP 做整行 opacity + translateY fade-up（無 clip 裁切） */
+/* .hero-split-line 保留以防舊快取，但不再產生 */
+.hero-split-line {
+  display: block;
+  overflow: hidden;
+  line-height: inherit;
+}
+
+.hero-split-inner {
+  display: block;
+  /* GSAP 控制 opacity + y，整行由下往上淡入 */
+}
+
+/* ─── Hero: 覆蓋 fade-up 衝突（GSAP 自行控制 hero 群組） ────────────────── */
+/* 讓 hero 區塊的 .hero-fade-group 不受 IntersectionObserver fade-up 影響 */
+html.js-ready #hero-section .hero-fade-group {
+  opacity: 1 !important;
+  transform: none !important;
+}
+
 /* Custom Scrollbar */
 .custom-scrollbar::-webkit-scrollbar {
   width: 6px;
@@ -355,4 +470,27 @@ body.bg-alt .main-content-wrapper {
 /* Hide scrollbar for contact modal box (WebKit) */
 #contact-modal-box::-webkit-scrollbar {
   display: none;
+}
+
+/* Prevent text zooming, scaling, and gesture pinch on Contact modal */
+#contact-modal-overlay,
+#contact-modal-box {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  touch-action: manipulation;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+#contact-modal-box input,
+#contact-modal-box textarea {
+  font-size: 16px;
+  user-select: text;
+  -webkit-user-select: text;
+}
+@media (min-width: 768px) {
+  #contact-modal-box input,
+  #contact-modal-box textarea {
+    font-size: 14px;
+  }
 }

@@ -5,9 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- SEO: Meta Title & Description -->
-    <title>裸賣包裝攝影與包裝設計視覺設計 | NAKED GROCERY 裸賣所 | Cleo Chang Portfolio</title>
-    <meta name="description"
-        content="Natural design speaks for itself. 專注天然產品真實視覺，無包裝食材的包裝設計，用自然材質與質樸視覺傳遞友善環境的溫度。">
+    <title>包裝攝影與包裝設計視覺設計 | NAKED GROCERY 裸食材 | Cleo Chang Portfolio</title>
+    <meta name="description" content="Natural design speaks for itself. 專注天然產品真實視覺，無包裝食材的包裝設計，用自然材質與質樸視覺傳遞友善環境的溫度。">
     <meta name="robots" content="index, follow">
 
     <!-- SEO: Canonical URL -->
@@ -15,7 +14,7 @@
 
     <!-- SEO: Open Graph -->
     <meta property="og:type" content="article">
-    <meta property="og:title" content="裸賣包裝攝影與包裝設計視覺設計 | NAKED GROCERY 裸賣所 | Cleo Chang">
+    <meta property="og:title" content="包裝攝影與包裝設計視覺設計 | NAKED GROCERY 裸食材 | Cleo Chang">
     <meta property="og:description" content="專注天然產品真實視覺，無包裝食材的包裝設計，用自然材質與質樸視覺傳遞友善環境的溫度。">
     <meta property="og:url" content="https://cleo-design.studio/Showcase-05.html">
     <meta property="og:image" content="https://cleo-design.studio/og-image.png">
@@ -26,7 +25,7 @@
 
     <!-- SEO: Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="裸賣包裝攝影與包裝設計視覺設計 | NAKED GROCERY 裸賣所">
+    <meta name="twitter:title" content="包裝攝影與包裝設計視覺設計 | NAKED GROCERY 裸食材">
     <meta name="twitter:description" content="專注天然產品真實視覺，無包裝食材的包裝設計，用自然材質傳遞友善環境的溫度。">
     <meta name="twitter:image" content="https://cleo-design.studio/og-image.png">
 
@@ -40,30 +39,8 @@
         rel="stylesheet">
 
     <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Inter', 'Noto Sans TC', 'sans-serif'],
-                    },
-                    colors: {
-                        earth: {
-                            bg: '#eff1e6',
-                            dark: '#2A2522',
-                            muted: '#58504a',
-                            sage: '#8A9A86',
-                            sand: '#b5aca0'
-                        }
-                    },
-                    boxShadow: {
-                        'glass': '0 8px 32px 0 rgba(42, 37, 34, 0.04)',
-                    }
-                }
-            }
-        }
-    </script>
+    <script src="./components/media-loader.js" defer></script>
+    <link rel="stylesheet" href="./css/tailwind.css">
 
     <style>
         body {
@@ -108,15 +85,12 @@
 <body class="antialiased selection:bg-earth-sage selection:text-white relative">
 
     <!-- Navigation -->
-    <nav class="fixed w-full top-0 z-50 p-6">
-        <div class="max-w-6xl mx-auto glass-panel rounded-full px-8 py-4 flex justify-between items-center">
+    <nav class="fixed w-full top-0 z-50 p-4 md:p-6">
+        <div class="max-w-6xl mx-auto glass-panel rounded-full pl-5 pr-14 py-3 md:px-8 md:py-4 flex justify-between items-center">
             <a href="index.html" target="_top" class="block transition-transform hover:scale-105">
                 <img src="./img/Cleo-logo.svg" alt="Cleo Logo" class="h-[57px] w-auto">
             </a>
-            <div class="flex items-center gap-6">
-                <a href="index.html?contact=open"
-                    class="text-sm font-medium hover:text-earth-sage transition-colors text-earth-muted">Contact</a>
-            </div>
+
         </div>
     </nav>
 
@@ -128,15 +102,15 @@
                 <div class="fade-up">
                     <span class="block text-earth-sage text-sm tracking-[0.2em] uppercase mb-6">Brand Visual
                         Design</span>
-                    <h1 class="text-3xl md:text-5xl font-light text-earth-dark">NAKED GROCERY 裸賣所</h1>
+                    <h1 class="text-3xl md:text-5xl font-light text-earth-dark">NAKED GROCERY 裸食材</h1>
                     <p class="mt-6 text-earth-muted text-lg md:text-xl font-light leading-relaxed mb-10">品牌識別與包裝設計</p>
                 </div>
 
                 <div
                     class="grid grid-cols-1 md:grid-cols-4 gap-8 border-t border-earth-dark/10 pt-10 fade-up delay-100">
                     <div>
-                        <h4 class="text-sm font-medium tracking-widest text-earth-sage uppercase mb-2">Brand</h4>
-                        <p class="text-earth-muted text-sm font-light leading-relaxed">NAKED GROCERY 裸賣所</p>
+                        <h4 class="text-sm font-medium tracking-widest text-earth-sage uppercase mb-2">Client</h4>
+                        <p class="text-earth-muted text-sm font-light leading-relaxed">NAKED GROCERY 裸食材</p>
                     </div>
                     <div>
                         <h4 class="text-sm font-medium tracking-widest text-earth-sage uppercase mb-2">Services</h4>
@@ -160,14 +134,14 @@
         <section class="max-w-6xl mx-auto px-6 mb-14 md:mb-24">
             <div class="flex flex-col lg:flex-row gap-16 item-start">
                 <div class="lg:w-1/3 fade-up">
-                    <h2 class="text-3xl font-light text-earth-dark mb-6">自然本質，<br>讓產品說話</h2>
+                    <h2 class="text-3xl font-light text-earth-dark mb-6">自然質感，<br>讓產品說話</h2>
                     <p class="text-earth-muted font-light leading-relaxed">
                         The Challenge & Approach
                     </p>
                 </div>
                 <div class="lg:w-2/3 fade-up delay-100">
                     <p class="text-lg md:text-xl text-earth-dark font-light leading-[1.7] md:leading-[1.6] mb-8">
-                        果乾裸食所為建立一套兼具自然質感與現代美學的視覺系統。TA專注於健康生活、注重生活美學的25-40歲女性客群。透過攝影、包裝設計，將產品的天然本質轉化為品牌的視覺語彙，讓消費者在第一眼就能感受到天然無負擔的品質。
+                        裸食材建立一套兼具天然食材與簡單美學的視覺系統。TA專注於健康生活、注重生活美學的25-40歲女性客群。透過攝影、包裝設計，將產品的天然本質轉化為品牌的視覺語彙，讓消費者在第一眼就能感受到食材本身的新鮮品質。
                     </p>
                     <p class="text-earth-muted font-light leading-relaxed">
                         品牌視覺以裸色系為基調，搭配清晰的排版邏輯，湯匙等意象形容出新鮮裸食的感覺，品質有信心呈現，既親近又現代的品牌個性。從包裝建構消費者對品牌的信任感。
@@ -236,7 +210,7 @@
                         <h2 class="text-3xl md:text-5xl font-light leading-tight text-earth-bg mb-10">天然的產品，<br>真實的視覺。
                         </h2>
                         <p class="text-white/70 font-light leading-relaxed text-lg mb-12">
-                            每一張照片都呈現了產品真實的樣貌，讓消費者在購買前就能感受到品牌對品質的承諾。
+                            每張照片都呈現了產品真實的樣貌，消費者在購買前就能感受到品牌對品質的承諾。
                         </p>
                     </div>
                 </div>
@@ -245,23 +219,37 @@
 
         <!-- Results / Next Project Navigation -->
         <section class="max-w-6xl mx-auto px-6 py-12 fade-up">
-            <div
-                class="flex flex-col md:flex-row justify-between items-center gap-10 border-t border-earth-dark/10 pt-10">
+            <div class="border-t border-earth-dark/10 pt-10 flex flex-col gap-10">
                 <div class="text-left">
                     <h3 class="text-sm font-medium tracking-widest text-earth-sage uppercase mb-2">Outcome</h3>
                     <p class="text-xl text-earth-dark font-light">建立品牌視覺識別與攝影風格</p>
                 </div>
-                <a href="Showcase-06.html"
-                    class="group flex items-center gap-4 text-earth-dark font-medium transition-colors hover:text-earth-sage">
-                    <span class="uppercase tracking-widest text-sm">Next Project</span>
-                    <div
-                        class="w-12 h-12 rounded-full border border-earth-dark/20 flex items-center justify-center group-hover:border-earth-sage group-hover:translate-x-2 transition-all">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" stroke-width="1.5"
-                                stroke-linecap="round" stroke-linejoin="round" />
-                        </svg>
-                    </div>
-                </a>
+                <div class="flex flex-row justify-between items-center w-full">
+                    <a href="Showcase-04.html"
+                        class="group flex items-center gap-2 sm:gap-4 text-earth-dark font-medium transition-colors hover:text-earth-sage">
+                        <div
+                            class="w-10 h-10 sm:w-12 sm:h-12 rounded-full border border-earth-dark/20 flex items-center justify-center group-hover:border-earth-sage group-hover:-translate-x-2 transition-all">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M19 12H5M5 12L11 6M5 12L11 18" stroke="currentColor" stroke-width="1.5"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </div>
+                        <span class="uppercase tracking-widest text-xs sm:text-sm">Previous</span>
+                    </a>
+                    <a href="Showcase-06.html"
+                        class="group flex items-center gap-2 sm:gap-4 text-earth-dark font-medium transition-colors hover:text-earth-sage">
+                        <span class="uppercase tracking-widest text-xs sm:text-sm">Next</span>
+                        <div
+                            class="w-10 h-10 sm:w-12 sm:h-12 rounded-full border border-earth-dark/20 flex items-center justify-center group-hover:border-earth-sage group-hover:translate-x-2 transition-all">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" stroke-width="1.5"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </div>
+                    </a>
+                </div>
             </div>
         </section>
 
@@ -271,7 +259,7 @@
                 class="max-w-6xl mx-auto pt-8 text-[10pt] text-[#2A2522] font-light fade-up flex flex-col md:flex-row justify-between items-center md:items-end text-center md:text-left">
                 <div class="mb-6 md:mb-0 leading-relaxed text-center md:text-left">
                     © 2026 Cleo Chang <br>
-                    Visual Designer Freelancer
+                    Visual Designer Freelancer. All Rights Reserved.
                 </div>
                 <div class="flex justify-center md:justify-end leading-relaxed text-center md:text-right">
                     <a href="https://www.behance.net/ida2008136c" target="_blank"

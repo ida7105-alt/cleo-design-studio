@@ -39,30 +39,8 @@
         rel="stylesheet">
 
     <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Inter', 'Noto Sans TC', 'sans-serif'],
-                    },
-                    colors: {
-                        earth: {
-                            bg: '#eff1e6',
-                            dark: '#2A2522',
-                            muted: '#58504a',
-                            sage: '#8A9A86',
-                            sand: '#b5aca0'
-                        }
-                    },
-                    boxShadow: {
-                        'glass': '0 8px 32px 0 rgba(42, 37, 34, 0.04)',
-                    }
-                }
-            }
-        }
-    </script>
+    <script src="./components/media-loader.js" defer></script>
+    <link rel="stylesheet" href="./css/tailwind.css">
 
     <style>
         body {
@@ -107,15 +85,12 @@
 <body class="antialiased selection:bg-earth-sage selection:text-white relative">
 
     <!-- Navigation -->
-    <nav class="fixed w-full top-0 z-50 p-6">
-        <div class="max-w-6xl mx-auto glass-panel rounded-full px-8 py-4 flex justify-between items-center">
+    <nav class="fixed w-full top-0 z-50 p-4 md:p-6">
+        <div class="max-w-6xl mx-auto glass-panel rounded-full pl-5 pr-14 py-3 md:px-8 md:py-4 flex justify-between items-center">
             <a href="index.html" target="_top" class="block transition-transform hover:scale-105">
                 <img src="./img/Cleo-logo.svg" alt="Cleo Logo" class="h-[57px] w-auto">
             </a>
-            <div class="flex items-center gap-6">
-                <a href="index.html?contact=open"
-                    class="text-sm font-medium hover:text-earth-sage transition-colors text-earth-muted">Contact</a>
-            </div>
+
         </div>
     </nav>
 
@@ -165,10 +140,10 @@
                 </div>
                 <div class="lg:w-2/3 fade-up delay-100">
                     <p class="text-lg md:text-xl text-earth-dark font-light leading-[1.7] md:leading-[1.6] mb-8">
-                        服飾裝牌 Mercci22設計每次檔期的張力服飾視覺首頁，擺脫無聊的網拍框架，以歐美簡約為基礎，輔以攝影、新字體的點綴與層次，讓視覺在社群媒體上更具張力與辨識度。
+                        服飾品牌 Mercci22-視覺首頁特別企劃，以歐美簡約風格為基礎，輔以攝影、風格字體的點綴與層次，加強視覺主題性與記憶點。
                     </p>
                     <p class="text-earth-muted font-light leading-relaxed">
-                        透過結合視覺指導，讓品牌在不同的傳播場域中皆能保持一致的風格識別，並在關鍵觸點上創造出更強烈的視覺衝擊。
+                        透過結合視覺語彙與設計，讓品牌在不同的傳播場域中皆能保持一致的風格識別。
                     </p>
                 </div>
             </div>
@@ -197,10 +172,10 @@
                 <div class="w-full p-10 md:p-24 text-center">
                     <div class="max-w-3xl mx-auto">
                         <span class="block text-white/50 text-sm tracking-[0.2em] uppercase mb-6">Visual Strategy</span>
-                        <h2 class="text-3xl md:text-5xl font-light leading-tight text-earth-bg mb-10">方寸之間，<br>品牌風格完整呈現。
+                        <h2 class="text-3xl md:text-5xl font-light leading-tight text-earth-bg mb-10">維持品牌態度，<br>呈現主題風格。
                         </h2>
                         <p class="text-white/70 font-light leading-relaxed text-lg mb-12">
-                            協助建立風格品味，提升品牌高度，在消費者心中留下深刻印象。
+                            協助建立風格品味，提升品牌高度，提升官網導購率。
                         </p>
                     </div>
                 </div>
@@ -209,23 +184,37 @@
 
         <!-- Results / Next Project Navigation -->
         <section class="max-w-6xl mx-auto px-6 py-12 fade-up">
-            <div
-                class="flex flex-col md:flex-row justify-between items-center gap-10 border-t border-earth-dark/10 pt-10">
+            <div class="border-t border-earth-dark/10 pt-10 flex flex-col gap-10">
                 <div class="text-left">
                     <h3 class="text-sm font-medium tracking-widest text-earth-sage uppercase mb-2">Outcome</h3>
-                    <p class="text-xl text-earth-dark font-light">建立服飾檔期視覺系統</p>
+                    <p class="text-xl text-earth-dark font-light">服飾檔期視覺設計</p>
                 </div>
-                <a href="Showcase-07.html"
-                    class="group flex items-center gap-4 text-earth-dark font-medium transition-colors hover:text-earth-sage">
-                    <span class="uppercase tracking-widest text-sm">Next Project</span>
-                    <div
-                        class="w-12 h-12 rounded-full border border-earth-dark/20 flex items-center justify-center group-hover:border-earth-sage group-hover:translate-x-2 transition-all">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" stroke-width="1.5"
-                                stroke-linecap="round" stroke-linejoin="round" />
-                        </svg>
-                    </div>
-                </a>
+                <div class="flex flex-row justify-between items-center w-full">
+                    <a href="Showcase-05.html"
+                        class="group flex items-center gap-2 sm:gap-4 text-earth-dark font-medium transition-colors hover:text-earth-sage">
+                        <div
+                            class="w-10 h-10 sm:w-12 sm:h-12 rounded-full border border-earth-dark/20 flex items-center justify-center group-hover:border-earth-sage group-hover:-translate-x-2 transition-all">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M19 12H5M5 12L11 6M5 12L11 18" stroke="currentColor" stroke-width="1.5"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </div>
+                        <span class="uppercase tracking-widest text-xs sm:text-sm">Previous</span>
+                    </a>
+                    <a href="Showcase-07.html"
+                        class="group flex items-center gap-2 sm:gap-4 text-earth-dark font-medium transition-colors hover:text-earth-sage">
+                        <span class="uppercase tracking-widest text-xs sm:text-sm">Next</span>
+                        <div
+                            class="w-10 h-10 sm:w-12 sm:h-12 rounded-full border border-earth-dark/20 flex items-center justify-center group-hover:border-earth-sage group-hover:translate-x-2 transition-all">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" stroke-width="1.5"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </div>
+                    </a>
+                </div>
             </div>
         </section>
 
@@ -235,7 +224,7 @@
                 class="max-w-6xl mx-auto pt-8 text-[10pt] text-[#2A2522] font-light fade-up flex flex-col md:flex-row justify-between items-center md:items-end text-center md:text-left">
                 <div class="mb-6 md:mb-0 leading-relaxed text-center md:text-left">
                     © 2026 Cleo Chang <br>
-                    Visual Designer Freelancer
+                    Visual Designer Freelancer. All Rights Reserved.
                 </div>
                 <div class="flex justify-center md:justify-end leading-relaxed text-center md:text-right">
                     <a href="https://www.behance.net/ida2008136c" target="_blank"

@@ -7,7 +7,7 @@
 class CleoNavbar extends HTMLElement {
   connectedCallback() {
     this.innerHTML = /* html */ `
-      <nav class="fixed w-full top-0 z-50 p-6">
+      <nav class="fixed w-full top-0 z-50 p-3 sm:p-6">
         <div class="max-w-6xl mx-auto glass-panel rounded-full px-8 py-4 flex justify-between items-center">
           <a href="#" class="block">
             <img src="./img/Cleo-logo.svg" alt="Cleo Logo" class="h-[57px] w-auto">
@@ -44,7 +44,7 @@ class CleoSectionHeader extends HTMLElement {
     this.innerHTML = /* html */ `
       <div class="${alignClass} ${mbClass} fade-up${delayClass}">
         <span class="text-label">${label}</span>
-        <h2 class="text-title">${title}</h2>
+        <h2 class="section-h2-animate text-title">${title}</h2>
         ${bodyHTML ? `<p class="mt-6 text-body ${bodyMaxW}">${bodyHTML}</p>` : ''}
       </div>
     `;
@@ -149,7 +149,7 @@ class CleoWorkStep extends HTMLElement {
 
     this.innerHTML = /* html */ `
       <div class="fade-up${delayClass} flex-1">
-        <div class="glass-panel rounded-[2rem] p-8 text-center h-full group cursor-pointer transition-all duration-300 ease-out hover:scale-[1.03] hover:-translate-y-2 hover:shadow-[0_20px_40px_-15px_rgba(42,37,34,0.1)] hover:bg-white/60">
+        <div class="glass-panel rounded-[2rem] p-5 sm:p-8 text-center h-full group cursor-pointer transition-all duration-300 ease-out hover:scale-[1.03] hover:-translate-y-2 hover:shadow-[0_20px_40px_-15px_rgba(42,37,34,0.1)] hover:bg-white/60">
           <div class="${numClasses}">${step}</div>
           <div class="transition-all duration-300 ease-out group-hover:-translate-y-1">
             <h4 class="${titleClasses}">${title}</h4>
