@@ -7,18 +7,54 @@
 class CleoNavbar extends HTMLElement {
   connectedCallback() {
     this.innerHTML = /* html */ `
-      <nav class="fixed w-full top-0 z-50 p-3 sm:p-6">
-        <div class="max-w-6xl mx-auto glass-panel rounded-full px-8 py-4 flex justify-between items-center">
+      <nav id="main-navbar" class="fixed w-full top-0 z-50 p-3 sm:p-6 transition-all duration-300">
+        <div class="max-w-6xl mx-auto glass-panel rounded-full px-8 py-[8px] sm:py-[18px] flex justify-between items-center">
           <a href="#" class="block">
             <img src="./img/Cleo-logo.svg" alt="Cleo Logo" class="h-[57px] w-auto">
           </a>
           <div class="flex items-center gap-8">
-            <a href="#works" class="text-sm font-medium hover:text-earth-sage transition-colors">Works</a>
-            <a href="javascript:void(0)" id="nav-contact-btn" class="text-sm font-medium hover:text-earth-sage transition-colors">Contact</a>
+            <a href="#works" class="text-sm sm:text-base font-medium hover:text-earth-sage transition-colors">Works</a>
+            <a href="javascript:void(0)" id="nav-contact-btn" class="text-sm sm:text-base font-medium hover:text-earth-sage transition-colors">Contact</a>
           </div>
         </div>
       </nav>
     `;
+
+    this.initScrollBehavior();
+  }
+
+  initScrollBehavior() {
+    const nav = this.querySelector('#main-navbar');
+    if (!nav) return;
+
+    let lastScrollY = window.scrollY;
+
+    window.addEventListener('scroll', () => {
+      // 僅在手機版 (螢幕寬度 < 640px) 啟用淡入淡出
+      if (window.innerWidth >= 640) {
+        nav.classList.remove('opacity-0', 'pointer-events-none');
+        nav.classList.add('opacity-100');
+        return;
+      }
+
+      const currentScrollY = window.scrollY;
+
+      // 靠近頂部 (<= 20px) 保持顯示
+      if (currentScrollY <= 20) {
+        nav.classList.remove('opacity-0', 'pointer-events-none');
+        nav.classList.add('opacity-100');
+      } else if (currentScrollY > lastScrollY) {
+        // 往下滑 -> 淡出隱藏
+        nav.classList.remove('opacity-100');
+        nav.classList.add('opacity-0', 'pointer-events-none');
+      } else {
+        // 往上滑 -> 淡入顯示
+        nav.classList.remove('opacity-0', 'pointer-events-none');
+        nav.classList.add('opacity-100');
+      }
+
+      lastScrollY = currentScrollY;
+    }, { passive: true });
   }
 }
 customElements.define('cleo-navbar', CleoNavbar);
