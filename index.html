@@ -55,27 +55,8 @@
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Noto+Sans+TC:wght@300;400;500;700&display=swap"
         rel="stylesheet">
 
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Inter', 'Noto Sans TC', 'sans-serif'],
-                    },
-                    colors: {
-                        earth: {
-                            bg: '#FAF9F6', // 柔亮米白背景
-                            dark: '#2A2522', // 深咖灰文字
-                            muted: '#58504a', // 次要文字
-                            sage: '#8A9A86' // 鼠尾草綠點綴
-                        }
-                    }
-                }
-            }
-        }
-    </script>
+    <!-- Tailwind CSS (local build) -->
+    <link rel="stylesheet" href="./css/tailwind.css">
 
     <link rel="stylesheet" href="./css/tokens.css">
     <link rel="stylesheet" href="./css/globals.css">
@@ -84,7 +65,11 @@
     <script src="./components/media-loader.js" defer></script>
 
     <!-- GSAP CDN -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+      integrity="sha512-on2NB48V1O552vSS79GvpGuYxT7LBuWSCEXFZBhMH3E3vW2JiIl9oMYHbQUQsHY24OpSJzSFXmtXjWmn9jw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"></script>
 </head>
 
 <body class="antialiased relative">
